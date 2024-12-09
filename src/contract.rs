@@ -8,10 +8,10 @@ use crate::msg::{ExecuteMsg, InfoResponse, InstantiateMsg, QueryMsg};
 use crate::state::{State, STATE};
 
 use cw20::{Cw20ExecuteMsg, Cw20ReceiveMsg};
-
+                                        
 // Note, you can use StdResult in some functions where you do not
 // make use of the custom errors
-#[entry_point]
+#[entry_point]                             
 pub fn instantiate(
     deps: DepsMut,
     _env: Env,
