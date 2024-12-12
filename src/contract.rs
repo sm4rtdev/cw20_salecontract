@@ -31,7 +31,7 @@ pub fn instantiate(
 
     Ok(Response::default())
 }
-
+                          
 // And declare a custom Error variant for the ones where you will want to make use of it
 #[entry_point]
 pub fn execute(
@@ -47,7 +47,7 @@ pub fn execute(
             Coin {
                 denom,
                 amount: price,
-            },
+            },                                          
         ),
         ExecuteMsg::Receive(msg) => try_receive(deps, msg),
         ExecuteMsg::Buy { denom, price } => try_buy(deps, info, denom, price),
