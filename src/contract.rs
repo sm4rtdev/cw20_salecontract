@@ -175,16 +175,16 @@ pub fn try_withdraw_all(deps: DepsMut, sender: Addr) -> Result<Response, Contrac
     STATE.update(deps.storage, |mut state| -> Result<_, ContractError> {
         state.balance = Uint128(0);
         Ok(state)
-    })?;
+    })?;                      
 
     Ok(Response {
         messages: vec![cw20_transfer_cosmos_msg],
         submessages: vec![],
         attributes: vec![attr("amount", state.balance)],
         data: None,
-    })
+    })                          
 }
-
+                                   
 #[entry_point]
 pub fn query(deps: Deps, _env: Env, msg: QueryMsg) -> StdResult<Binary> {
     match msg {
