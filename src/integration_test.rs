@@ -152,11 +152,11 @@ fn sale_happy_path() {
                 denom: NATIVE_TOKEN_DENOM.to_string(),
             })
             .into(),
-        )
+        )                                                              
         .unwrap();
     let balance: BalanceResponse = from_binary(&query_res).unwrap();
     assert_eq!(balance.amount.amount, Uint128(10));
-
+                                                                                
     // Check cw20 token balance is 10
     let buyer_balance = cash.balance(&router, buyer.clone()).unwrap();
     assert_eq!(buyer_balance, Uint128(10));
