@@ -19,10 +19,10 @@ Can only be called by the instantiator.
 `wasmd tx wasm execute <sale_contract_address> '{"set_price":{"price":"<amount>","denom":"<denom>"}}' --amount "<funds (ie 1uatom)>" --from <creator address> --chain-id="<chain_id>"`
 
 ## Get Price
-
+                        
 `wasmd query wasm contract-state smart <sale_contract_address> '{"get_price":{}}' --chain-id="<chain_id>"`
 
-## Get CW20 Token Balance
+## Get CW20 Token Balance             
 
 `wasmd query wasm contract-state smart <sale_contract_address> '{"get_balance":{}}' --chain-id="<chain_id>"`
 
@@ -30,13 +30,13 @@ Can only be called by the instantiator.
 
 Please check price and CW20 token balance before making a purchase.
 
-The contract determines correct quantity of CW20 tokens to transfer to the buyer based off the price and amount of native tokens sent. After a purchase, the native token funds are automatically transferred to the creators bank balance. 
+The contract determines correct quantity of CW20 tokens to transfer to the buyer based off the price and amount of native tokens sent. After a purchase, the native token funds are automatically transferred to the creators bank balance.                            
 
 `wasmd tx wasm execute <sale_contract_address> '{"buy":{}}' --amount "<funds (ie 1uatom)>" --from <address> --chain-id="<chain_id>"`
 
 ## Withraw Tokens
 
-Can only be called by the instantiator.
+Can only be called by the instantiator.                  
 
 `wasmd tx wasm execute <sale_contract_address> '{"withdraw_all":{}}' --from <creator address> --chain-id="<chain_id>"`
 
