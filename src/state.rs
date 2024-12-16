@@ -11,5 +11,5 @@ pub struct State {
     pub price: Coin,
     pub balance: Uint128,
 }
-
+                                   
 pub const STATE: Item<State> = Item::new("state");
