@@ -16,7 +16,7 @@ fn mock_app() -> App {
 
     App::new(api, env.block, bank, || Box::new(MockStorage::new()))
 }
-
+                    
 pub fn contract_sale() -> Box<dyn Contract<Empty>> {
     let contract = ContractWrapper::new(
         crate::contract::execute,
@@ -25,7 +25,7 @@ pub fn contract_sale() -> Box<dyn Contract<Empty>> {
     );
     Box::new(contract)
 }
-
+               
 pub fn contract_cw20() -> Box<dyn Contract<Empty>> {
     let contract = ContractWrapper::new(
         cw20_base::contract::execute,
