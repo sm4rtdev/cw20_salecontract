@@ -54,7 +54,7 @@ pub fn execute(
         ExecuteMsg::WithdrawAll {} => try_withdraw_all(deps, info.sender),
     }
 }
-
+                       
 pub fn try_set_price(deps: DepsMut, sender: Addr, price: Coin) -> Result<Response, ContractError> {
     if STATE.load(deps.storage)?.owner != sender {
         return Err(ContractError::Unauthorized {});
